@@ -23,6 +23,12 @@ These instructions will get you a copy of the project to run it on your local ma
 5. Check the paths
 6. Run the program
 
+### Usage
+
+This application is a tool for translating text between English and Dutch. It gets the text from user, and automatically detects whether the text is in English or Dutch. If the text is in Dutch, it will translate it to English. If the text is in English, it will translate it to Dutch.
+![Watson_app](https://user-images.githubusercontent.com/118216325/213575931-2a80b605-9ec6-4abf-b488-94333560dc7b.png)
+![Watson_app2](https://user-images.githubusercontent.com/118216325/213575941-177e1f65-3899-44fb-8a03-1d4707ee3c9f.png)
+
 ### Build With
 
 - Python - Programming Language
