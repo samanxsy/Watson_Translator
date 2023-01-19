@@ -1,5 +1,5 @@
 # Watson_Translator
-This program is an English - Dutch Translator powered by IBM Watson 
+This application is an English - Dutch Translator powered by IBM Watson 
 
 
 ## Getting Started
