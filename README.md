@@ -16,7 +16,7 @@ These instructions will get you a copy of the project to run it on your local ma
 ### Installing 
 
 1. clone the repository to your local machine: 
-  $ git clone https://github.com/samanxsy/Watson_Translator.git
+  - $ git clone https://github.com/samanxsy/Watson_Translator.git
 2. Install the requirements
 3. Create an IBM Cloud account <https://cloud.ibm.com/login>
 4. Get your API Key and store it as an environment variable > "watson_API_KEY"
