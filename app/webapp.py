@@ -11,7 +11,7 @@ def home():
     """
     
     page = ""
-    f = open("app/layout.html", "r")
+    f = open("app/templates/layout.html", "r")
     page = f.read()
     f.close()
 
@@ -25,7 +25,7 @@ def toTranslate():
     """
 
     page = ""
-    f = open("app/layout.html", "r")
+    f = open("app/templates/layout.html", "r")
     page = f.read()
     f.close()
     
