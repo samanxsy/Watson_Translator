@@ -1,7 +1,7 @@
 import eng_dutch_translator
 from flask import Flask, request
 
-app = Flask('Watson Translator')
+app = Flask('Watson Translator', static_folder="./app/static")
 
 @app.route('/')
 def home():
