@@ -16,21 +16,34 @@
   </div>
 
   <div class="translator_box">
-
     <form method="get" action="/translate">
-    <textarea class="searchbar" name="text_to_translate" placeholder="Type something . . . " wrap="hard" required></textarea>
+    <textarea class="searchbar" name="text_to_translate" wrap="hard" required maxlength="10000">Type something . . . </textarea>
+    <select class="options" name="text_model">
+      <option value="en">English</option>
+      <option value="fr">French</option>
+      <option value="nl">Dutch</option>
+      <option value="de">German</option>
+      <option value="it">Italian</option>
+      <option value="es">Spanish</option>
+    </select>
   </div>
 
   <div class="buttons">
-    <button class="translate" type="submit">Translate</button> </input>
+    <button class="translate" type="submit">Translate</button> </input> 
+  </div>
+
+  <div class="translator_box">
+    <textarea class="translation_box" name="text_to_translate" wrap="hard" required maxlength="10000">Translation</textarea>
+    <select class="options" name="translate_model">
+      <option value="nl">Dutch</option>
+      <option value="fr">French</option>
+      <option value="en">English</option>
+      <option value="de">German</option>
+      <option value="it">Italian</option>
+      <option value="es">Spanish</option>
+    </select>
   </div>
 
 </form>
-
-  <div class="result_box" contenteditable="false">
-    <p>|||</p>
-  </div>
-
 </body>
-
 </html>

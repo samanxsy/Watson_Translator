@@ -1,5 +1,6 @@
-import eng_dutch_translator
+import WatsonTranslator
 from flask import Flask, request
+
 
 app = Flask('Watson Translator', static_folder="./app/static")
 
@@ -17,7 +18,7 @@ def home():
 
     return page
     
-@app.route('/translate')
+@app.route('/translate', methods=['GET'])
 def toTranslate():
     
     """
@@ -30,12 +31,21 @@ def toTranslate():
     f.close()
     
     textToTranslate = request.args.get('text_to_translate')
-    translated_text = eng_dutch_translator.english_to_dutch(textToTranslate)
-
-    page = page.replace("|||", translated_text)
+    text_language = request.args.get('text_model')
+    translation_language = request.args.get('translate_model')
+    model_id = f"{text_language}-{translation_language}"
+    
+    error_msg = "Sorry!\nTranslation is not available for this pair!"
+    
+    try:
+        translated_text = WatsonTranslator.translate(textToTranslate, model_id)
+        page = page.replace("Type something . . . ", textToTranslate)
+        page = page.replace("Translation", translated_text)
+    
+    except:
+        page = page.replace("Translation", error_msg)
     
     return page
-
 
 if __name__ == '__main__':
     app.run(debug=True)
