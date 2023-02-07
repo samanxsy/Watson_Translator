@@ -37,6 +37,9 @@ These instructions will get you a copy of the project to run it on your local ma
 - Flask - Web framework
 - IBM Watson AI
 
+### App view
+![Watson_translator](https://user-images.githubusercontent.com/118216325/217238123-f689689d-5c2f-4945-8802-99cced9d694a.png)
+
 ### Containerization
 - If you want to run the application in a container, follow these steps: 
 - If you don't have docker installed visit: <https://www.docker.com/>
