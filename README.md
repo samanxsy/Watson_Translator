@@ -54,7 +54,7 @@ These instructions will get you a copy of the project to run it on your local ma
   ```
 ### Author
 
- - Samanxsy (Saman Saybani)
+ - Saman Saybani
  
 ### Acknowledgments
 
