@@ -7,7 +7,7 @@ These instructions will get you a copy of the project to run it on your local ma
 
 ### Prerequisites
 
-- Python 3.x
+- Python 3.10
 - Flask
 - ibm-Watson
 - ibm-cloud-sdk-core
