@@ -1,5 +1,5 @@
 import unittest
-from WatsonTranslator import translate
+from app.watson import translate
 
 
 class test_translator(unittest.TestCase):
