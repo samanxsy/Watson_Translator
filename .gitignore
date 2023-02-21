@@ -1,0 +1,11 @@
+# Ignore cache files
+__pycache__/
+.pytest_cache/
+.venv/
+
+# Ignore coverage reports
+.coverage
+
+# Ignore app directory caches
+app/__pycache__/
+app/common/__pycache__/

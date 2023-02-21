@@ -13,12 +13,12 @@ language_translator = LanguageTranslatorV3(
 
 language_translator.set_service_url(URL)
 
+
 def translate(user_text, model):
     """
     This function translates the given text to the target language
     """
-    
+
     translation = language_translator.translate(text=user_text, model_id=f'{model}').get_result()
 
     return translation.get('translations')[0].get('translation')
-    
