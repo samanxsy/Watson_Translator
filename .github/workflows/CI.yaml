@@ -41,3 +41,4 @@ jobs:
         run: pytest
         env: 
           DATABASE_URI: "postgresql://postgres:pgs3cr3t@postgres:5432/testdb"
+          API_KEY: ${{ secrets.watson_API_KEY }}
