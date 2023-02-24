@@ -10,6 +10,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: python:3.10-alpine
+    
+    env:
+      API_KEY: ${{ secrets.WATSON_API_KEY }}
 
     services:
       postgres: 
