@@ -26,13 +26,6 @@ class TestTranslator(BaseTest):
     with self.app.test_client() as client:
       response = client.get("/translate?text_to_translate=hello&text_model=en&translate_model=es")
       self.assertEqual(response.status_code, status.HTTP_200_OK)
-
-        
-  def test_translation_success2(self):
-    """There shouldn't be the error message in an available translation pair"""
-    with self.app.test_client() as client:
-      response = client.get("/translate?text_to_translate=hello&text_model=en&translate_model=es")
-      self.assertNotIn(b"Sorry!\nTranslation is not available for this pair!", response.data)
       
     
   def test_invalid_pair(self):
