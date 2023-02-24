@@ -2,7 +2,7 @@ import os
 from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 
-API_KEY =  os.environ.get("watson_API_KEY")
+API_KEY =  os.environ.get('API_KEY)
 URL = "https://api.eu-de.language-translator.watson.cloud.ibm.com/instances/c36cf875-e213-453e-bfab-31d31d3b9fe4"
 
 #  #  #  instance
