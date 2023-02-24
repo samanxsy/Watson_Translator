@@ -12,7 +12,7 @@ jobs:
     container: python:3.10-alpine
     
     env:
-      API_KEY: ${{ secrets.watson_API_KEY }}
+      API_KEY: ${{ secrets.WATSON_API_KEY }}
 
     services:
       postgres: 
@@ -41,4 +41,4 @@ jobs:
         run: pytest
         env: 
           DATABASE_URI: "postgresql://postgres:pgs3cr3t@postgres:5432/testdb"
-          API_KEY: ${{ secrets.watson_API_KEY }}
+          API_KEY: ${{ secrets.WATSON_API_KEY }}
