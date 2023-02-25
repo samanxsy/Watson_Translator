@@ -38,7 +38,10 @@ jobs:
           python -m pip install -r requirements.txt
           
       - name: Run unit tests with pytest
-        run: pytest --apikey=$API_KEY
+
+        run: |
+          export API_KEY=$API_KEY
+          pytest
         env: 
           DATABASE_URI: "postgresql://postgres:pgs3cr3t@postgres:5432/testdb"
           API_KEY: ${{ secrets.WATSON_API_KEY }}
