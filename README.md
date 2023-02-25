@@ -1,6 +1,8 @@
 # Watson_Translator
 A Translator powered by IBM Watson
 
+[![CI](https://github.com/samanxsy/Watson_Translator/actions/workflows/CI.yaml/badge.svg)](https://github.com/samanxsy/Watson_Translator/actions/workflows/CI.yaml)
+
 
 ## Getting Started
 These instructions will get you a copy of the project to run it on your local machine for development and testing purposes.
