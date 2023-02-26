@@ -35,13 +35,12 @@ class TestTranslator(BaseTest):
       self.assertIn(b"Sorry!\nTranslation is not available for this pair!", response.data)
 
 
-  def test_translation_exception(self):
-    """Should return the error message"""        
+  def test_empty_input(self):
+    """Should return error message when text to translate is empty"""
     with self.app.test_client() as client:
-      with unittest.mock.patch('app.server.watson.translate', side_effect=Exception('test')):
-        response = client.get("/translate?text_to_translate=hello&text_model=lr&translate_model=pr")
-        self.assertIn(b"Sorry!\nTranslation is not available for this pair!", response.data)
-        
+      response = client.get("/translate?text_to_translate=&text_model=en&translate_model=es")
+      self.assertIn(b"Please enter some text to translate!", response.data)
+
     
 if __name__ == '__main__': 
   unittest.main()

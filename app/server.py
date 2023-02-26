@@ -1,5 +1,6 @@
 from . import watson
 from flask import Flask, request
+from app.common.errorhandlers import EmptyInput
 
 app = Flask('Watson Translator', static_folder="./app/static")
 
@@ -19,7 +20,7 @@ def home():
 
 
 @app.route('/translate', methods=['GET'])
-def toTranslate():    
+def toTranslate():
     """
     This function will get the text and then reutrn the translation
     """
@@ -34,17 +35,21 @@ def toTranslate():
     translation_language = request.args.get('translate_model')
     model_id = f"{text_language}-{translation_language}"
 
-    error_msg = "Sorry!\nTranslation is not available for this pair!"
+    invalid_pair_error_msg = "Sorry!\nTranslation is not available for this pair!"
+    empty_input_error_msg = "Please enter some text to translate!"
 
     try:
+        if not textToTranslate.strip():
+            raise EmptyInput(empty_input_error_msg)
+
         translated_text = watson.translate(textToTranslate, model_id)
-        page = page.replace("Type something . . . ", textToTranslate)
-        page = page.replace("Translation", translated_text)
+        page = page.replace("Translation will appear here...", translated_text)
+        return translated_text
 
-    except:
-        page = page.replace("Translation", error_msg)
+    except EmptyInput:
+        page = page.replace("Translation will appear here...", empty_input_error_msg)
+        return empty_input_error_msg
 
-    return page
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)
+    except Exception:
+        page = page.replace("Translation will appear here...", invalid_pair_error_msg)
+        return invalid_pair_error_msg
