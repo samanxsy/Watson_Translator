@@ -12,6 +12,6 @@ COPY ./app ./app
 
 ENV API_KEY=$API_KEY
 
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "app.server"]
+CMD ["gunicorn", "--bind=0.0.0.0:8000", "app.server:app"]
 
-EXPOSE 5000
+EXPOSE 8000
