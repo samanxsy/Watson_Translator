@@ -10,8 +10,8 @@ COPY .dockerignore /
 
 COPY ./app ./app
 
-ENV API_KEY=$watson_API_KEY
+ENV API_KEY=$API_KEY
 
-CMD ["python", "-m", "app.server"]
+CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "app.server"]
 
-EXPOSE 8000
+EXPOSE 5000
