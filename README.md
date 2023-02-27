@@ -5,7 +5,7 @@ A Translator powered by IBM Watson
 
 
 ## Getting Started
-These instructions will get you a copy of the project to run it on your local machine for development and testing purposes.
+These instructions will get you a copy of the project to run it on your local machine for development and testing purposes. [Version 2.0]
 
 ### Prerequisites
 
@@ -17,42 +17,56 @@ These instructions will get you a copy of the project to run it on your local ma
 
 ### Installing 
 
-1. clone the repository to your local machine:
+1. Clone the repository to your local machine:
   - git clone https://github.com/samanxsy/Watson_Translator.git
-2. Install the requirements
+2. Create and activate a virtual environment 
+  - MacOS & Linux:
+```
+virtualenv .venv
+source .venv/bin/activate
+```
+3. Install the requirements
 - ```
   pip install -r requirements.txt
   ```
 3. Create an IBM Cloud account <https://cloud.ibm.com/login>
-4. Get your API Key and store it as an environment variable > "watson_API_KEY"
+4. Get your API Key and store it as an environment variable > "API_KEY"
 - 
   ```
-  export watson_API_KEY="<your API key>"
+  export API_KEY="<your API key>"
   ```
-5. Check the paths
-6. Run the program
-7. To run the tests, take the Test_translator.py to the root directory
+5. run the program on your local host
+```
+gunicorn app.server:app
+```
 
-### Build With
+### Built With
 
 - Python - Programming Language
 - Flask - Web framework
 - IBM Watson AI
 
 ### App view
-![Watson_translator](https://user-images.githubusercontent.com/118216325/217238123-f689689d-5c2f-4945-8802-99cced9d694a.png)
+![Watson-app](https://user-images.githubusercontent.com/118216325/221532711-7e42e211-e5d8-4373-9997-7f65c4750fc5.png)
+![w3](https://user-images.githubusercontent.com/118216325/221532776-5aed298b-fac7-4c02-9d44-116d8757b8b3.png)
+![w4](https://user-images.githubusercontent.com/118216325/221532802-0a60a951-2186-4b49-ba5e-a1e945adbbd6.png)
 
-### Containerization
+### Docker container
 - If you want to run the application in a container, follow these steps: 
 - If you don't have docker installed visit: <https://www.docker.com/>
 
-  - build the container image using the docker file:
+  - Pull the Dockerimage from Docker hub: 
   ```
-  docker build -t watson-translator:v1.0 .
+  docker pull samanxsy/041e3c24bd37a492be8a39dd64c9b5846c9933c0e8ea5b8d7969f398780b36a5:latest
   ```
-  - Run the container using this command, passing in your API_KEY as an environment variable and mapping the Flask port: 
+OR
+  - build a new container image using the docker file:
   ```
-  docker run -e watson_API_KEY=$watson_API_KEY -p 8000:8000 watson-translator:v1.0
+  docker build -t <app-name>:<version> .
+  ```
+  - After pulling the image or creating one, run the container using this command, pass your API_KEY as an environment variable and map the port: 
+  ```
+  docker run -e API_KEY=$API_KEY -p 8000:8000 <image-id>:latest
   ```
 ### Author
 
