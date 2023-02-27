@@ -52,10 +52,8 @@ gunicorn app.server:app
 ![w4](https://user-images.githubusercontent.com/118216325/221532802-0a60a951-2186-4b49-ba5e-a1e945adbbd6.png)
 
 ### Docker container
-- If you want to run the application in a container, follow these steps: 
-- If you don't have docker installed visit: <https://www.docker.com/>
-
-  - Pull the Dockerimage from Docker hub: 
+To run the application in a container, follow these steps: 
+ - Pull the Dockerimage from Docker hub: 
   ```
   docker pull samanxsy/041e3c24bd37a492be8a39dd64c9b5846c9933c0e8ea5b8d7969f398780b36a5:latest
   ```
