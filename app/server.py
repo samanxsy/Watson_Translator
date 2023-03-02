@@ -1,8 +1,24 @@
 from . import watson
 from flask import Flask, request
+from flask_talisman import Talisman
 from app.common.errorhandlers import EmptyInput
 
 app = Flask('Watson Translator', static_folder="./app/static")
+
+# Disable the following lines for TESTING purposes, but KEEP them ENABLED for production
+csp = {
+    'default-src': '\'self\'',
+    'img-src': '*'
+}
+talisman = Talisman(
+    app,
+    content_security_policy=csp,
+    force_https=True,
+    strict_transport_security=True,
+    session_cookie_secure=True,
+    session_cookie_http_only=True,
+    frame_options='DENY'
+)
 
 
 @app.route('/')
