@@ -39,6 +39,7 @@ source .venv/bin/activate
 ```
 gunicorn app.server:app
 ```
+- note that you might need to disable the security codes in server.py to run it on localhost
 
 ### Built With
 
